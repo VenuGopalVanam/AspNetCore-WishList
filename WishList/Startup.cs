@@ -35,9 +35,6 @@ namespace WishList
             }
             app.UseRouting();
 
-#pragma warning disable MVC1005 // Cannot use UseMvc with Endpoint Routing
-            app.UseMvcWithDefaultRoute();
-#pragma warning restore MVC1005 // Cannot use UseMvc with Endpoint Routing
 
         }
     }
