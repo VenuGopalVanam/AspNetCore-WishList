@@ -19,6 +19,8 @@ namespace WishList
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("Wishlist"));
         }
 
@@ -33,9 +35,7 @@ namespace WishList
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseMvcWithDefaultRoute();
-
-
+             app.UseMvcWithDefaultRoute();
         }
     }
 }
