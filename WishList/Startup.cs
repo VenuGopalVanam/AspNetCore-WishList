@@ -18,9 +18,9 @@ namespace WishList
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();  
-           
+            services.AddMvc();
 
+            services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("Wishlist"));
         }
 
