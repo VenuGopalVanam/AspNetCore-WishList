@@ -34,8 +34,11 @@ namespace WishList
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseRouting();
-            app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
-            
+
+#pragma warning disable MVC1005 // Cannot use UseMvc with Endpoint Routing
+            app.UseMvcWithDefaultRoute();
+#pragma warning restore MVC1005 // Cannot use UseMvc with Endpoint Routing
+
         }
     }
 }
